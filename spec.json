@@ -1,0 +1,61 @@
+{
+    "service_name": "pa",
+    "type": "UI",
+    "spec": {
+        "name": "pa",
+        "version": "1.0",
+        "servers": [
+            {
+                "url": "https://citrix.sharefile.com/d-s657feee6dfa4f3b9",
+                "description": "dev"
+            },
+            {
+                "url": "https://citrix.sharefile.com/d-s657feee6dfa4f3b9",
+                "description": "daily"
+            },
+            {
+                "url": "https://citrix.sharefile.com/d-s657feee6dfa4f3b9",
+                "description": "staging"
+            },
+            {
+                "url": "https://citrix.sharefile.com/d-s657feee6dfa4f3b9",
+                "description": "prod"
+            }
+        ],
+        "resources": [
+            {
+                "type": "javascript",
+                "fileName": "bundle",
+                "extension": "js"
+            }
+        ],
+        "navigation": [
+            {
+                "menuName": "security",
+                "tabs": [
+                    {
+                        "tabName": "Users",
+                        "componentName": "Users"
+                    },
+                    {
+                        "tabName": "Access Security",
+                        "componentName": "Pizza"
+                    }
+                ]
+            },
+            {
+                "menuName": "operations",
+                "tabs": [
+                    {
+                        "tabName": "User Operations",
+                        "componentName": "Users"
+                    }
+                ]
+            }
+        ],
+        "sharedRoutes": [
+            "pa_routes"
+        ],
+        "library": "pa"
+    }
+}
