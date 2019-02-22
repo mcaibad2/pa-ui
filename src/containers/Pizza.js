@@ -6,7 +6,7 @@ class Pizza extends Component {
     render () {
         return (
             <div>
-                <h1>The Pizza</h1>
+                <h3>The Pizza</h3>
                 <PizzaImage />
             </div>
         );

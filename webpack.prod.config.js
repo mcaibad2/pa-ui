@@ -1,6 +1,8 @@
+const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const autoprefixer = require('autoprefixer');
 const path = require("path");
-const autoprefixer = require("autoprefixer");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
     mode: "production",
@@ -9,12 +11,22 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js",
-        chunkFilename: "[id].js",
-        publicPath: ""
+        library: "pa",
+        libraryTarget: "umd",
     },
-    resolve: {
-        extensions: ['.js', '.jsx']
+    optimization: {
+        minimizer: [new UglifyJsPlugin()]
     },
+
+    plugins: [
+        new ProgressBarPlugin(),
+        new webpack.DefinePlugin({ "process.env.NODE_ENV": JSON.stringify("production") })
+    ],
+    externals: [
+        "react",
+        "rdx",
+        { "rdx/semantic-ui-react": "rdxSemanticUIReact" },
+    ],
     module: {
         rules: [
             {
@@ -56,12 +68,5 @@ module.exports = {
                 loader: "url-loader?limit=8000&name=images/[name].[ext]"
             }
         ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: __dirname + "/src/index.html",
-            filename: "index.html",
-            inject: "body"
-        })
-    ]
+    }
 };
