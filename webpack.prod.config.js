@@ -6,7 +6,6 @@ const webpack = require("webpack");
 
 module.exports = {
     mode: "production",
-    devtool: "cheap-module-eval-source-map",
     entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -17,7 +16,6 @@ module.exports = {
     optimization: {
         minimizer: [new UglifyJsPlugin()]
     },
-
     plugins: [
         new ProgressBarPlugin(),
         new webpack.DefinePlugin({ "process.env.NODE_ENV": JSON.stringify("production") })
