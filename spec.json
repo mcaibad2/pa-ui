@@ -5,6 +5,10 @@
         "name": "pa",
         "version": "1.0",
         "servers": [
+        	  {
+                "url": "https://citrix.sharefile.com/d-s657feee6dfa4f3b9",
+                "description": "local"
+            },
             {
                 "url": "https://citrix.sharefile.com/d-s657feee6dfa4f3b9",
                 "description": "dev"
@@ -19,7 +23,7 @@
             },
             {
                 "url": "https://citrix.sharefile.com/d-s657feee6dfa4f3b9",
-                "description": "prod"
+                "description": "production"
             }
         ],
         "resources": [
@@ -38,17 +42,8 @@
                         "componentName": "Users"
                     },
                     {
-                        "tabName": "Access Security",
+                        "tabName": "User Access",
                         "componentName": "Pizza"
-                    }
-                ]
-            },
-            {
-                "menuName": "operations",
-                "tabs": [
-                    {
-                        "tabName": "User Operations",
-                        "componentName": "Users"
                     }
                 ]
             }
